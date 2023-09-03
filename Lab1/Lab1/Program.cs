@@ -18,8 +18,6 @@ namespace Lab1
             List<string> numArray2 = new List<string>();
             List<int> startIndex = new List<int>();
             List<int> startIndex2 = new List<int>();
-            List<int> endIndex = new List<int>();
-            List<int> endIndex2 = new List<int>();
             long total = 0;
 
             for (int i = 0; i < userInput.Length; i++)
@@ -31,7 +29,6 @@ namespace Lab1
                         numbers += userInput.Substring(i, j - (i - 1));
                         numArray.Add(numbers);
                         startIndex.Add(i);
-                        endIndex.Add(j - (i - 1));
                         numbers = "";
                     }
                 }
@@ -46,14 +43,12 @@ namespace Lab1
                 {
                     numArray2.Add(numArray[i]);
                     startIndex2.Add(startIndex[i]);
-                    endIndex2.Add(endIndex[i]);
                 }
                 
             }
 
             for (int i = 0; i < numArray2.Count; i++) 
             {
-                int startIndexs = userInput.IndexOf(numArray2[i]);
                 string substring1 = userInput.Substring(0, startIndex2[i]);
                 string substring2 = userInput.Remove(0, startIndex2[i] + numArray2[i].Length);
                 Console.ForegroundColor = ConsoleColor.White;
